@@ -1,0 +1,98 @@
+<!-- 
+This document generates a web page that has a form for appintment scheduling 
+for the bank of the wizording world.
+ 
+Date : 7th September 2019
+Name : form.html
+Author : Himanshi Chetwani
+-->
+<!DOCTYPE html>
+<html lang="en">
+<!--
+Adding the starter code along with links to the .css and .js file
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styling.css">
+    <title>Gringotts Wizarding Bank</title>
+</head>
+
+<body>
+    <!-- Plays a song in the background -->
+    <audio id ="song" src="./song_hm.mp3" ></audio>      
+    <!-- Appointment form -->     
+    <form class="appointment-form" onsubmit="return(validateForm());" autocomplete="on">
+        <ul>
+            <!-- Page Title -->
+            <li>
+                <h1 id="PageTitle">Appointment Scheduling-Gringotts Wizarding Bank</h2>
+            </li>
+            <!-- Name of User -->
+            <li>
+                <label for="Name">Name</label><br />
+                <input id="Name" type="text" pattern="[A-Z]+[a-z]*,[A-Z]+[a-z]*" placeholder="Name"
+                    oninvalid="validateName();" onmouseover="alert('You are inputting the name') ;"  oninput="playSong();" required>
+
+            </li>
+            <!-- Phone Number of User -->
+            <li>
+                <label for="TelNumber">Phone Number</label><br />
+                <input id="TelNumber"  type="tel" placeholder="Number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                    oninvalid="validateNumber();" onmouseover="alert('You are inputting the phone number') ;" required>
+            </li>
+            <!-- Email Id of user -->
+            <div class="EmailClass">
+            <li id="EmailDets">
+                <label for="EmailId">Email ID</label><br />
+                <input id="EmailId" type="email" pattern="[A-Za-z0-9._%+-]+@gwb.org" title="You must first create an account with the bank!" placeholder="Email" onmouseover="alert('You are inputting the email ID') ;" required>
+            </li>
+            </div>
+            <!-- Banker of User -->
+            <div class="BD" onclick="CreateDate();this.onclick=null;">
+                <li id="BankerDets" onselect ="isChecked();this.onclick=null;">
+                    <label for="Banker">Choose a Banker</label><br />
+                    <span>
+                        <input id="Banker1" type="radio" name="Bank" value="Harry Potter" />
+                        <label for="Banker1" class="BankerPic Banker1"> </label>
+                    </span>
+                    <span>
+                        <input id="Banker2" type="radio" name="Bank" value="Hermoine Granger" />
+                        <label for="Banker2" class="BankerPic Banker2"></label>
+                    </span>
+                    <span>
+                        <input id="Banker3" type="radio" name="Bank" value="Ronald Weasely" />
+                        <label for="Banker3" class="BankerPic Banker3"></label>
+                    </span> <br />
+                </li>
+            </div>
+            <!-- Description of the user concern -->
+            <li>
+                <label for="Desc">Describe your concern briefly</label><br />
+                <textarea id="Desc" placeholder="Optional" onmouseover="alert('You are inputting the concern') ;" required oninvalid="validateDesc();"></textarea>
+            </li>
+            <!-- File uploading of the user -->
+            <li>
+                <label for="File">Would you like to provide us with any file before the appointment?</label>
+                <input type="file" id="File" onmouseover="alert('You are adding the file') ;" oninvalid="validateFile();" required>
+            </li>
+            <!-- Terms and Conditions of the user -->
+            <li>
+                <label for="TC">
+                    <input type="checkbox" id="TC" value="check" />
+                    I have read and agreed to the Terms and Conditions and Privacy Policy
+                </label>
+            </li>
+            <!-- User submit button -->
+            <li>
+                <input type="submit" value="OK">
+                <input type="reset" value="Reset">
+            </li>
+        </ul>
+    </form>
+</body>
+<script src="functionality.js">
+</script>
+
+</html>

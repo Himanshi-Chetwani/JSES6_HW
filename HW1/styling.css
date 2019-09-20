@@ -1,0 +1,137 @@
+/*
+Performs styling for the web page
+Date : 7th September 2019
+Name : styling.css
+Author : Himanshi Chetwani
+*/
+/*
+The input feild where the banker choice is input
+*/
+.BankerInfo input{
+    margin:0;padding:0;
+    -webkit-appearance:none;
+    appearance:none;
+}
+/*
+The image of banker 1
+*/
+.Banker1{
+    background-image:url(HP.jpg);
+    width: 50px;
+    height: 50px;
+}
+/*
+The image of banker 2
+*/
+.Banker2{
+    background-image:url(HG.jpg);
+    width: 50px;
+    height: 50px;
+}
+/*
+The image of banker 3
+*/
+.Banker3{
+    background-image:url(RW.jpg);
+    width: 50px;
+    height: 50px;
+}
+/*
+Styling of the picture of the banker
+*/
+.BankerPic{
+    cursor:pointer;
+    background-size:contain;
+    background-repeat:no-repeat;
+    display:inline-block;
+    width:100px;height:70px;
+    transition: all 100ms ease-in;
+    filter: brightness(1.0) grayscale(0.9)
+}
+/*
+Brightning image on hover
+*/
+.BankerPic:hover{
+    filter: brightness(1) 
+}
+/*
+Styling the body element
+*/
+
+body {
+    font: 14px/21px "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+}
+/*
+Styling h2 and label
+*/
+.appointment-form h2, .appointment-form label {
+    font-family:Georgia, Times, "Times New Roman", serif;
+}
+/*
+Styling un ordered list
+*/
+.appointment-form ul {
+    list-style-type:none;
+    list-style-position:outside;
+    margin:0px;
+    padding:0px;
+}
+/*
+Styling ordered list
+*/
+.appointment-form li{
+    padding:12px; 
+ 
+    position:relative;
+}
+/*
+Styling h2
+*/
+.appointment-form h2 {
+    margin:0;
+    display: inline;
+}
+/*
+Styling the image
+*/
+.appointment-form image{
+    float: right;
+}
+/*
+Styling the input feilds and the text boxes
+*/
+.appointment-form input, .appointment-form textarea { 
+    border:1px solid #aaa;
+    box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset;
+    border-radius:2px;
+}
+/*
+Styling the text area
+*/
+.appointment-form input:focus, .appointment-form textarea:focus {
+    background: #fff; 
+    border:1px solid #555; 
+    box-shadow: 0 0 3px #aaa; 
+}
+/*
+Coloring the border on invalid input
+*/
+.appointment-form input:focus:invalid, .appointment-form textarea:focus:invalid { 
+    box-shadow: 0 0 5px #fc0808;
+    border-color: #ca0808
+}
+/*
+Coloring the border on valid input
+*/
+.appointment-form input:required:valid, .appointment-form textarea:required:valid {     
+    box-shadow: 0 0 5px #5cd053;
+    border-color: #28921f;
+}
+/*
+Styling main heading of form
+*/
+.appointment-form h1 {
+    border-bottom:1px solid #777;
+    padding-bottom: 5px;
+    color: brown;
+}
